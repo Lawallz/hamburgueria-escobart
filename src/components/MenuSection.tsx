@@ -512,33 +512,94 @@ export default function MenuSection({ onAddToCart }: MenuSectionProps) {
               )}
 
               {/* OPÇÕES PARA DESTILADOS */}
-              {activeCustomizeItem.category === 'destilados' && (
-                <div className="space-y-4">
-                  <div>
-                    <span className="block font-space font-extrabold text-xs uppercase text-brand-charcoal mb-2">Opção:</span>
-                    <div className="flex gap-4">
-                      <label className="flex items-center gap-2 cursor-pointer font-sans font-bold">
-                        <input type="radio" name="destiladoType" checked={selectedType === 'Dose'} onChange={() => setSelectedType('Dose')} className="w-5 h-5 accent-brand-yellow" />
-                        Apenas Dose
-                      </label>
-                      <label className="flex items-center gap-2 cursor-pointer font-sans font-bold">
-                        <input type="radio" name="destiladoType" checked={selectedType === 'Combo'} onChange={() => setSelectedType('Combo')} className="w-5 h-5 accent-brand-yellow" />
-                        Combo (5 Red Bull)
-                      </label>
-                    </div>
-                  </div>
-                  <div>
-                    <span className="block font-space font-extrabold text-xs uppercase text-brand-charcoal mb-2">Marca:</span>
-                    <input 
-                      type="text" 
-                      placeholder="Ex: Smirnoff, Absolut, Tanqueray, Jack Daniel's..."
-                      value={selectedBrand}
-                      onChange={(e) => setSelectedBrand(e.target.value)}
-                      className="w-full p-2 border-2 border-brand-charcoal bg-white font-sans font-bold focus:outline-none"
-                    />
-                  </div>
-                </div>
-              )}
+{activeCustomizeItem.category === 'destilados' && (
+  <div className="space-y-4">
+    <div>
+      <span className="block font-space font-extrabold text-xs uppercase text-brand-charcoal mb-2">
+        Qual {activeCustomizeItem.name} você deseja?
+      </span>
+      <select 
+        value={selectedBeer} 
+        onChange={(e) => setSelectedBeer(e.target.value)}
+        className="w-full p-2 border-2 border-brand-charcoal bg-white font-sans font-bold focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+      >
+        <option value="">Selecione sua bebida</option>
+        
+        {/* Usamos .includes() no nome para identificar o tipo, assim não depende do ID exato */}
+        
+        {/* VODKA */}
+        {activeCustomizeItem.name.toLowerCase().includes('vodka') && (
+          <>
+            <option value="Smirnoff (Dose)|15">Smirnoff (Dose) - R$ 15,00</option>
+            <option value="Smirnoff (Combo)|150">Smirnoff (Combo) - R$ 150,00</option>
+            <option value="Absolut (Dose)|25">Absolut (Dose) - R$ 25,00</option>
+            <option value="Absolut (Combo)|220">Absolut (Combo) - R$ 220,00</option>
+            <option value="Ciroc (Dose)|35">Ciroc (Dose) - R$ 35,00</option>
+            <option value="Ciroc (Combo)|300">Ciroc (Combo) - R$ 300,00</option>
+            <option value="Grey Goose (Dose)|35">Grey Goose (Dose) - R$ 35,00</option>
+            <option value="Grey Goose (Combo)|300">Grey Goose (Combo) - R$ 300,00</option>
+            <option value="Belvedere (Dose)|45">Belvedere (Dose) - R$ 45,00</option>
+            <option value="Belvedere (Combo)|350">Belvedere (Combo) - R$ 350,00</option>
+          </>
+        )}
+
+        {/* GIN */}
+        {activeCustomizeItem.name.toLowerCase().includes('gin') && (
+          <>
+            <option value="Hendrick's (Dose)|60">Hendrick's (Dose) - R$ 60,00</option>
+            <option value="Hendrick's (Combo)|300">Hendrick's (Combo) - R$ 300,00</option>
+            <option value="Bulldog (Dose)|50">Bulldog (Dose) - R$ 50,00</option>
+            <option value="Bulldog (Combo)|280">Bulldog (Combo) - R$ 280,00</option>
+            <option value="Beefeater (Dose)|45">Beefeater (Dose) - R$ 45,00</option>
+            <option value="Beefeater (Combo)|250">Beefeater (Combo) - R$ 250,00</option>
+            <option value="Bombay (Dose)|45">Bombay (Dose) - R$ 45,00</option>
+            <option value="Bombay (Combo)|250">Bombay (Combo) - R$ 250,00</option>
+            <option value="Tanqueray (Dose)|45">Tanqueray (Dose) - R$ 45,00</option>
+            <option value="Tanqueray (Combo)|250">Tanqueray (Combo) - R$ 250,00</option>
+            <option value="Arapuru (Dose)|35">Arapuru (Dose) - R$ 35,00</option>
+            <option value="Arapuru (Combo)|300">Arapuru (Combo) - R$ 300,00</option>
+            <option value="Larios (Dose)|35">Larios (Dose) - R$ 35,00</option>
+            <option value="Larios (Combo)|300">Larios (Combo) - R$ 300,00</option>
+            <option value="Gordons (Dose)|35">Gordons (Dose) - R$ 35,00</option>
+            <option value="Gordons (Combo)|300">Gordons (Combo) - R$ 300,00</option>
+            <option value="Apogee (Dose)|35">Apogee (Dose) - R$ 35,00</option>
+            <option value="Apogee (Combo)|300">Apogee (Combo) - R$ 300,00</option>
+            <option value="Rocks (Dose)|35">Rocks (Dose) - R$ 35,00</option>
+            <option value="Rocks (Combo)|300">Rocks (Combo) - R$ 300,00</option>
+          </>
+        )}
+
+        {/* WHISKEY */}
+        {activeCustomizeItem.name.toLowerCase().includes('whiskey') && (
+          <>
+            <option value="Buffalo Trace (Dose)|70">Buffalo Trace (Dose) - R$ 70,00</option>
+            <option value="Buffalo Trace (Combo)|350">Buffalo Trace (Combo) - R$ 350,00</option>
+            <option value="Makers (Dose)|70">Makers (Dose) - R$ 70,00</option>
+            <option value="Makers (Combo)|350">Makers (Combo) - R$ 350,00</option>
+            <option value="Buchannas (Dose)|60">Buchannas (Dose) - R$ 60,00</option>
+            <option value="Buchannas (Combo)|330">Buchannas (Combo) - R$ 330,00</option>
+            <option value="Gold Label (Dose)|80">Gold Label (Dose) - R$ 80,00</option>
+            <option value="Gold Label (Combo)|400">Gold Label (Combo) - R$ 400,00</option>
+            <option value="Double Black (Dose)|70">Double Black (Dose) - R$ 70,00</option>
+            <option value="Double Black (Combo)|350">Double Black (Combo) - R$ 350,00</option>
+            <option value="Ballantines (Dose)|45">Ballantines (Dose) - R$ 45,00</option>
+            <option value="Ballantines (Combo)|220">Ballantines (Combo) - R$ 220,00</option>
+            <option value="White Horse (Dose)|45">White Horse (Dose) - R$ 45,00</option>
+            <option value="White Horse (Combo)|220">White Horse (Combo) - R$ 220,00</option>
+            <option value="Passaport (Dose)|30">Passaport (Dose) - R$ 30,00</option>
+            <option value="Passaport (Combo)|160">Passaport (Combo) - R$ 160,00</option>
+            <option value="Jack Daniel's (Dose)|55">Jack Daniel's (Dose) - R$ 55,00</option>
+            <option value="Jack Daniel's (Combo)|300">Jack Daniel's (Combo) - R$ 300,00</option>
+            <option value="Black Label (Dose)|60">Black Label (Dose) - R$ 60,00</option>
+            <option value="Black Label (Combo)|320">Black Label (Combo) - R$ 320,00</option>
+            <option value="Red Label (Dose)|50">Red Label (Dose) - R$ 50,00</option>
+            <option value="Red Label (Combo)|250">Red Label (Combo) - R$ 250,00</option>
+          </>
+        )}
+      </select>
+    </div>
+  </div>
+)}
 
               {/* TEXT AREA GLOBAL PARA OBSERVAÇÕES */}
               <div>

@@ -78,7 +78,7 @@ export default function Hero({ onScrollToMenu, onOpenCart }: HeroProps) {
 
             {/* Polaroid caption signature */}
             <div className="mt-4 text-center font-headline text-xl text-brand-charcoal tracking-wide">
-              EL REY DEL SABOR
+              EL PATRON
             </div>
           </div>
         </div>

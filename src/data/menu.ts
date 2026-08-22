@@ -230,7 +230,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Cervejas Tradicionais (600ml)',
     description: 'Amstel (R$ 15), Budweiser (R$ 15), Original (R$ 16) e Heineken (R$ 17).',
     price: 15.00,
-    image: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80',
+    image: '/public/assets/img/cervejas 600.png',
     category: 'cervejas',
     ingredients: []
   },
@@ -239,7 +239,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Cerveja Litrão (1L)',
     description: 'Budweiser ou Original (R$ 20,00).',
     price: 20.00,
-    image: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80',
+    image: '/public/assets/img/litrão.png',
     category: 'cervejas',
     ingredients: []
   },
@@ -248,7 +248,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Cervejas Artesanais',
     description: 'Elementum, Baden, Colorado, Dama (R$ 23). Roleta Russa, Paulaner (R$ 26). Patagônia 740ml (R$ 27).',
     price: 23.00,
-    image: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80',
+    image: '/public/assets/img/artesanais.png',
     category: 'cervejas',
     badge: 'Premium',
     ingredients: []
@@ -258,7 +258,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Cervejas Long Neck e Lata',
     description: 'Corona, Heineken LN, Patagônia Lata, Baden Lata (R$ 12). Goose Island (R$ 13). Lagunitas (R$ 15). Blue Moon (R$ 17).',
     price: 12.00,
-    image: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80',
+    image: '/public/assets/img/long-neck.png',
     category: 'cervejas',
     ingredients: []
   },
@@ -271,7 +271,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Caipirinhas da Champions League',
     description: 'Escolha seu time (sabor) e a marca do destilado. Sabores: Real Madrid, Barcelona, Sevilla, Valência, Juventus, Milan, Porto, Benfica, Ajax, PSV, Inter de Milão, Roma, Napoli, Man. United, Liverpool, Arsenal, Chelsea, Bayern ou Dortmund.',
     price: 25.00,
-    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80',
+    image: '/public/assets/img/caipirinhas.jpg',
     category: 'caipirinhas',
     badge: 'Premium',
     ingredients: ['Frutas da Casa', 'Destilado à escolha']
@@ -285,7 +285,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Vodkas (Dose ou Combo)',
     description: 'Selecione a marca e se deseja Dose ou Combo (5 Red Bull + 5 Gelos de Coco). Opções: Smirnoff, Absolut, Ciroc, Grey Goose, Belvedere.',
     price: 15.00,
-    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80',
+    image: '/public/assets/img/vodkas.jpg',
     category: 'destilados',
     ingredients: []
   },
@@ -294,7 +294,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Gins (Dose ou Combo)',
     description: 'Selecione a marca e se deseja Dose ou Combo (5 Red Bull + 5 Gelos de Coco). Opções: Arapuru, Larios, Gordons, Apogee, Rocks, Beefeater, Bombay, Tanqueray, Bulldog, Hendrick’s.',
     price: 35.00,
-    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80',
+    image: '/public/assets/img/gins.jpg',
     category: 'destilados',
     ingredients: []
   },
@@ -303,7 +303,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Whiskeys (Dose ou Combo)',
     description: 'Selecione a marca e se deseja Dose ou Combo (5 Red Bull + 5 Gelos de Coco). Opções: Passaport, Ballantines, White Horse, Red Label, Jack Daniel’s, Black Label, Buchannas, Buffalo Trace, Makers, Double Black, Gold Label.',
     price: 30.00,
-    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80',
+    image: '/public/assets/img/whiskeys.jpg',
     category: 'destilados',
     ingredients: []
   }
