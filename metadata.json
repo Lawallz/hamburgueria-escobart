@@ -1,0 +1,6 @@
+{
+  "name": "Escobart",
+  "description": "Uma hamburgueria e petiscaria artesanal com sabor de outro mundo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

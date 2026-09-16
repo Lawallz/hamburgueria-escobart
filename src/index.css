@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Anton", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+
+  --color-brand-yellow: #ffd000;
+  --color-brand-yellow-dark: #6f5a00;
+  --color-brand-charcoal: #1b1b1b;
+  --color-brand-secondary: #7e5700;
+  --color-brand-background: #f9f9f9;
+  --color-brand-surface-low: #f3f3f3;
+}
+
+@layer utilities {
+  .neo-brutalist-border {
+    border: 3.5px solid #1b1b1b;
+  }
+  .neo-brutalist-shadow {
+    box-shadow: 6px 6px 0px 0px #1b1b1b;
+  }
+  .neo-brutalist-shadow-yellow {
+    box-shadow: 6px 6px 0px 0px #ffd000;
+  }
+  .neo-brutalist-shadow-hover {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .neo-brutalist-shadow-hover:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px 0px #1b1b1b;
+  }
+  .neo-brutalist-shadow-hover-yellow:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px 0px #ffd000;
+  }
+  .neo-brutalist-shadow-active:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px 0px #1b1b1b;
+  }
+  .sticker-rotate-ccw {
+    transform: rotate(-5deg);
+  }
+  .sticker-rotate-cw {
+    transform: rotate(5deg);
+  }
+}
+
+/* Custom transitions and scrollbar */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  border-left: 3.5px solid #1b1b1b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b1b1b;
+  border: 1px solid #f9f9f9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd000;
+}
