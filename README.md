@@ -7,10 +7,9 @@
 
 [![Status do Projeto](https://img.shields.io/badge/STATUS-EM_PRODU%C3%87%C3%83O-green?style=for-the-badge&logo=git&logoColor=white)](https://github.com)
 [![Tecnologias](https://img.shields.io/badge/TECH-REACT_%7C_TYPESCRIPT_%7C_TAILWIND-blue?style=for-the-badge&logo=react&logoColor=white)](https://github.com)
-[![Licença](https://img.shields.io/badge/LICEN%C3%87A-MIT-green?style=for-the-badge)](LICENSE)
 
 <p align="center">
-  <b>Um cardápio digital moderno, de altíssima conversão e sem complexidade de Back-End, desenvolvido sob medida para revolucionar o atendimento de salão e delivery da Hamburgueria Escobart.</b>
+  <b>Um cardápio digital moderno, de altíssima conversão e com painel administrativo em Node.js, desenvolvido sob medida para revolucionar o atendimento de salão e delivery da Hamburgueria Escobart.</b>
 </p>
 
 </div>
@@ -21,7 +20,7 @@
 
 A **Hamburgueria Escobart** é um estabelecimento gastronômico de essência marcante, unindo cortes nobres, burgers artesanais inspirados na cultura temática, porções generosas e caipirinhas exclusivas batizadas com nomes de times da *Champions League*. 
 
-Este repositório abriga o código-fonte do **site oficial e cardápio interativo**. O projeto foi estrategicamente planejado em **Front-End puro** para eliminar intermediários (como taxas abusivas de iFood) e direcionar os pedidos diretamente para o WhatsApp da cozinha ou do balcão de atendimento, garantindo agilidade operacional máxima sem a necessidade de servidores complexos ou bancos de dados pesados.
+Este repositório abriga o código-fonte do **site oficial e cardápio interativo**. A versão atual inclui servidor Node.js para o painel administrativo e a persistência do cardápio. O fluxo de pedidos direciona a mensagem montada pelo cliente ao WhatsApp do atendimento.
 
 ---
 
@@ -52,5 +51,22 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina 
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/hamburgueria-escobart.git](https://github.com/seu-usuario/hamburgueria-escobart.git)
+   git clone https://github.com/Lawallz/hamburgueria-escobart.git
    cd hamburgueria-escobart
+   npm ci
+   ```
+
+2. Copie `.env.example` para `.env` e configure `ADMIN_PASSWORD` com uma senha exclusiva de pelo menos 12 caracteres. Confira `APP_ORIGIN=http://localhost:3000`.
+3. Execute `npm run dev` e abra http://localhost:3000. O painel fica em http://localhost:3000/admin.
+
+## Verificação
+
+```bash
+npm run lint
+npm run build
+npm test
+```
+
+## Hospedagem
+
+O painel requer processo Node.js e armazenamento persistente. Publicar apenas `dist/` não disponibiliza a API administrativa. Consulte [PAINEL-ADMIN.md](PAINEL-ADMIN.md) para configuração do servidor, persistência e backups.
