@@ -5,6 +5,13 @@ export async function api<T>(url: string, method = 'GET', body?: unknown): Promi
   const response = await fetch(url, { method, credentials: 'same-origin', headers: body ? { 'Content-Type': 'application/json' } : {}, body: body ? JSON.stringify(body) : undefined });
   const data = await response.json().catch(() => ({ error: 'Servidor indisponível. Tente novamente.' }));
   if (!response.ok) throw new ApiError(data.error || 'Não foi possível concluir.', response.status);
+  // Vite publishes public/ at the site root, including in production builds.
+  if ((url === '/api/menu' || url === '/api/admin/menu') && Array.isArray(data.items)) {
+    data.items = data.items.map((item: MenuItem) => ({
+      ...item,
+      image: item.image.replace(/^(?:\/|\.\/)?public\//, '/'),
+    }));
+  }
   return data;
 }
 export const categories = { burgers: 'Hambúrgueres', sides: 'Porções', drinks: 'Bebidas', desserts: 'Sobremesas', cervejas: 'Cervejas', caipirinhas: 'Caipirinhas', destilados: 'Destilados' };
