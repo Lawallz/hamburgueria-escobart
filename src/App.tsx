@@ -34,13 +34,27 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Smooth scroll helper for sections
+  // Scroll to the complete product list, not the featured carousel.
   const scrollToMenu = () => {
-    const section = document.getElementById('cardapio');
+    const section = document.getElementById('full-menu-section');
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  // The browser can process a URL hash before React has mounted the menu.
+  // Handle the QR deep link after the page has rendered.
+  useEffect(() => {
+    if (window.location.hash !== '#cardapio') return;
+
+    const menu = document.getElementById('full-menu-section');
+    if (!menu) return;
+
+    window.requestAnimationFrame(() => {
+      const top = menu.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top, behavior: 'auto' });
+    });
+  }, []);
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
