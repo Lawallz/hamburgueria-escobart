@@ -5,18 +5,19 @@ import {
 } from 'lucide-react';
 import { MenuItem, CartItem, Review } from '../types';
 import { api, MenuData } from '../lib/api';
+import { MENU_ITEMS } from '../data/menu';
 
 interface MenuSectionProps {
   onAddToCart: (item: MenuItem, customizations: CartItem['customizations'], notes: string) => void;
 }
 
 export default function MenuSection({ onAddToCart }: MenuSectionProps) {
-  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [menuItems, setMenuItems] = useState<MenuItem[]>(MENU_ITEMS);
   const [menuError, setMenuError] = useState('');
   const [loading, setLoading] = useState(true);
   async function loadMenu() {
     try { const data = await api<MenuData>('/api/menu'); setMenuItems(data.items); setMenuError(''); }
-    catch { setMenuError('Não foi possível atualizar o cardápio. Tente novamente.'); }
+    catch { setMenuError('Exibindo o cardápio salvo no site.'); }
     finally { setLoading(false); }
   }
   useEffect(() => {
