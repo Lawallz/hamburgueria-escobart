@@ -245,3 +245,273 @@ footer {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Campaign layer: make Halloween feel like a full event, not only a recolor. */
+.halloween-hero {
+  min-height: min(900px, calc(100vh - 5rem));
+  background:
+    radial-gradient(ellipse at 77% 42%, rgb(160 72 181 / 30%), transparent 28rem),
+    radial-gradient(ellipse at 15% 90%, rgb(255 122 26 / 13%), transparent 24rem),
+    linear-gradient(128deg, #120b17 0%, #201327 55%, #301a29 100%) !important;
+}
+
+.halloween-hero::before {
+  content: "☾";
+  top: 6%;
+  right: 12%;
+  color: #ffbf79;
+  font-size: clamp(5rem, 12vw, 10rem);
+  opacity: .15;
+  filter: none;
+}
+
+.halloween-hero::after {
+  content: "🦇  ·  ✦  ·  🦇";
+  bottom: 7%;
+  right: 8%;
+  color: #c084fc;
+  font-size: clamp(1.1rem, 2.4vw, 1.7rem);
+  letter-spacing: .3em;
+  opacity: .52;
+  filter: none;
+}
+
+#hero-content {
+  max-width: 790px;
+}
+
+#hero-title {
+  max-width: 780px;
+  font-size: clamp(3.2rem, 7vw, 6.7rem);
+  letter-spacing: -.035em;
+  text-wrap: balance;
+  text-shadow: 0 3px 28px rgb(0 0 0 / 22%);
+}
+
+.halloween-headline-stamp {
+  color: #211628;
+  box-shadow: 6px 6px 0 #9955a8;
+  transform: rotate(-2deg);
+}
+
+#hero-description {
+  max-width: 38rem;
+  color: #e1d2e6;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+}
+
+#hero-view-menu-btn {
+  box-shadow: 6px 6px 0 #9955a8;
+}
+
+#hero-view-menu-btn:hover {
+  box-shadow: 9px 9px 0 #ff7a1a;
+}
+
+#hero-fast-order-btn {
+  background: #291b30;
+  color: #fff1df;
+}
+
+#hero-graphic {
+  perspective: 1000px;
+}
+
+#hero-graphic > div:nth-child(2) {
+  border-width: 4px;
+  outline: 1px solid rgb(255 122 26 / 30%);
+  outline-offset: 9px;
+  transform: rotate(2deg);
+}
+
+#hero-graphic > div:nth-child(2)::before {
+  content: "ESPECIAL DA NOITE";
+  position: absolute;
+  z-index: 2;
+  top: 1.1rem;
+  left: -1.25rem;
+  padding: .5rem 1rem;
+  border: 2px solid #211628;
+  background: #ff7a1a;
+  color: #211628;
+  font: 800 .65rem "Space Grotesk", sans-serif;
+  letter-spacing: .14em;
+  transform: rotate(-7deg);
+  box-shadow: 3px 3px 0 #9955a8;
+}
+
+#hero-graphic .text-brand-charcoal {
+  color: #211628;
+}
+
+#cardapio {
+  background:
+    radial-gradient(ellipse at 4% 6%, rgb(124 58 237 / 15%), transparent 25rem),
+    radial-gradient(ellipse at 96% 50%, rgb(255 122 26 / 8%), transparent 28rem),
+    #19111e;
+}
+
+.halloween-section-kicker,
+.halloween-menu-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: #ff9a4d;
+  font: 800 .68rem "Space Grotesk", sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.halloween-section-kicker {
+  padding: .45rem .75rem;
+  border: 1px solid rgb(255 122 26 / 55%);
+  background: rgb(255 122 26 / 9%);
+}
+
+.halloween-section-kicker span {
+  color: #c084fc;
+}
+
+.halloween-menu-heading {
+  position: relative;
+  padding-left: 1.1rem;
+  border-left: 5px solid #ff7a1a;
+}
+
+.halloween-menu-heading::after {
+  content: "✦";
+  position: absolute;
+  right: -2rem;
+  top: -.3rem;
+  color: #9955a8;
+  font-size: 2rem;
+  transform: rotate(12deg);
+}
+
+.halloween-menu-eyebrow {
+  margin-bottom: .55rem;
+  color: #c99ada;
+  font-size: .62rem;
+}
+
+.halloween-menu-heading h2 {
+  line-height: .96;
+}
+
+.halloween-menu-heading h2 span {
+  color: #ff8732;
+}
+
+.halloween-menu-heading p {
+  margin-top: .7rem;
+  color: #d5c2db;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+#cardapio input {
+  min-height: 3.25rem;
+  background: #24172a;
+  box-shadow: 4px 4px 0 rgb(126 62 155 / 70%);
+}
+
+#cardapio button {
+  border-radius: 2px;
+}
+
+#cardapio .flex.flex-wrap.gap-3.mb-10 button {
+  border-width: 2px;
+  border-color: #765383;
+  background: #24172a;
+  color: #e9dced;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+#cardapio .flex.flex-wrap.gap-3.mb-10 button:hover {
+  background: #392342;
+  transform: translateY(-2px);
+}
+
+#cardapio .flex.flex-wrap.gap-3.mb-10 button.bg-brand-yellow {
+  border-color: #ff7a1a;
+  background: #ff7a1a;
+  color: #211628;
+  box-shadow: 3px 3px 0 #9955a8;
+}
+
+#featured-carousel article,
+#full-menu-section article {
+  position: relative;
+  border-width: 2px;
+  border-color: #70477a;
+  background:
+    radial-gradient(circle at 100% 0%, rgb(192 132 252 / 12%), transparent 10rem),
+    linear-gradient(155deg, #2b2031, #211628 70%);
+  box-shadow: 5px 5px 0 #4f2f5b;
+}
+
+#featured-carousel article::before {
+  content: "✦";
+  position: absolute;
+  top: .85rem;
+  right: 1rem;
+  z-index: 1;
+  color: #ff9a4d;
+  font-size: 1.3rem;
+}
+
+#featured-carousel article:hover,
+#full-menu-section article:hover {
+  border-color: #ff7a1a;
+  box-shadow: 8px 8px 0 #9955a8;
+}
+
+#featured-carousel article h3,
+#full-menu-section article h4 {
+  color: #fff1df;
+}
+
+#featured-carousel article p,
+#full-menu-section article p {
+  color: #d3c1d9;
+}
+
+#featured-carousel article .border-dashed {
+  border-color: #60456b;
+}
+
+#full-menu-section article .relative.h-56 {
+  border-color: #ff7a1a;
+}
+
+@media (max-width: 640px) {
+  .halloween-hero {
+    min-height: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  #hero-title {
+    font-size: clamp(3rem, 15vw, 4.6rem);
+  }
+
+  #hero-graphic > div:nth-child(2)::before {
+    left: -.5rem;
+  }
+
+  .halloween-menu-heading {
+    padding-left: .8rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .halloween-headline-stamp {
+    animation: halloween-stamp 5s ease-in-out infinite;
+  }
+
+  @keyframes halloween-stamp {
+    0%, 100% { transform: rotate(-2deg) translateY(0); }
+    50% { transform: rotate(1deg) translateY(-3px); }
+  }
+}
