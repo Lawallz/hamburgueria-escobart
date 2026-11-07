@@ -1,6 +1,6 @@
 import type { MenuItem } from '../types';
 
-const burgerImage = '';
+const burgerImage = '/assets/placeholder.svg';
 const sideImage = '/assets/placeholder.svg';
 
 export const MENU_ITEMS: MenuItem[] = [
