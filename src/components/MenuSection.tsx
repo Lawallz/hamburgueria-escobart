@@ -265,7 +265,7 @@ export default function MenuSection({ onAddToCart }: MenuSectionProps) {
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12">
             <div>
               <h2 className="font-headline text-3xl md:text-4xl uppercase tracking-tight text-brand-charcoal">
-                NOSSO ARSENAL COMPLETO
+                CARDÁPIO 🎃 HALLOWEEN
               </h2>
             </div>
             <div className="relative max-w-md w-full">
