@@ -218,12 +218,14 @@ export default function MenuSection({ onAddToCart }: MenuSectionProps) {
               const isVisibleOnMobile = idx === carouselIndex % Math.max(1, featuredBurgers.length);
               return (
                 <article key={burger.id} className={`bg-white neo-brutalist-border neo-brutalist-shadow-hover transition-all flex flex-col group overflow-hidden ${isVisibleOnMobile ? 'block' : 'hidden md:flex'}`}>
-                  <div className="relative h-64 md:h-72 overflow-hidden border-b-2 border-brand-charcoal">
-                    <img src={burger.image} alt={burger.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
-                    <div className="absolute top-4 right-4 bg-brand-yellow px-3 py-1.5 neo-brutalist-border font-space font-extrabold text-sm text-brand-charcoal">
-                      R$ {burger.price.toFixed(2).replace('.', ',')}
+                  {burger.image && (
+                    <div className="relative h-64 md:h-72 overflow-hidden border-b-2 border-brand-charcoal">
+                      <img src={burger.image} alt={burger.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
+                      <div className="absolute top-4 right-4 bg-brand-yellow px-3 py-1.5 neo-brutalist-border font-space font-extrabold text-sm text-brand-charcoal">
+                        R$ {burger.price.toFixed(2).replace('.', ',')}
+                      </div>
                     </div>
-                  </div>
+                  )}
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="font-space font-extrabold text-2xl uppercase tracking-tight text-brand-charcoal mb-2">{burger.name}</h3>
                     <p className="font-sans text-sm text-zinc-600 font-medium mb-6 leading-relaxed flex-grow">{burger.description}</p>
@@ -284,12 +286,14 @@ export default function MenuSection({ onAddToCart }: MenuSectionProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredMenuItems.map((item) => (
                 <article key={item.id} className="bg-white neo-brutalist-border neo-brutalist-shadow-hover flex flex-col group h-full">
-                  <div className="relative h-56 overflow-hidden border-b-2 border-brand-charcoal">
-                    <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" referrerPolicy="no-referrer" />
-                    <div className="absolute top-3 right-3 bg-brand-yellow px-2.5 py-1 neo-brutalist-border font-space font-extrabold text-xs text-brand-charcoal">
-                      R$ {item.price.toFixed(2).replace('.', ',')}
+                  {item.image && (
+                    <div className="relative h-56 overflow-hidden border-b-2 border-brand-charcoal">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" referrerPolicy="no-referrer" />
+                      <div className="absolute top-3 right-3 bg-brand-yellow px-2.5 py-1 neo-brutalist-border font-space font-extrabold text-xs text-brand-charcoal">
+                        R$ {item.price.toFixed(2).replace('.', ',')}
+                      </div>
                     </div>
-                  </div>
+                  )}
                   <div className="p-5 flex flex-col flex-grow">
                     <h4 className="font-space font-extrabold text-lg uppercase tracking-tight text-brand-charcoal mb-2">{item.name}</h4>
                     <p className="font-sans text-xs md:text-sm text-zinc-500 font-medium mb-4 flex-grow leading-relaxed">{item.description}</p>
@@ -330,7 +334,7 @@ export default function MenuSection({ onAddToCart }: MenuSectionProps) {
 
             <div className="p-6 max-h-[80vh] overflow-y-auto space-y-6">
               <div className="flex gap-4 bg-brand-surface-low p-4 border-2 border-brand-charcoal">
-                <img src={activeCustomizeItem.image} alt={activeCustomizeItem.name} className="w-20 h-20 object-cover neo-brutalist-border shrink-0" referrerPolicy="no-referrer" />
+                {activeCustomizeItem.image && <img src={activeCustomizeItem.image} alt={activeCustomizeItem.name} className="w-20 h-20 object-cover neo-brutalist-border shrink-0" referrerPolicy="no-referrer" />}
                 <div>
                   <span className="font-space font-extrabold text-lg text-brand-charcoal block">{activeCustomizeItem.name}</span>
                   <p className="font-sans text-xs text-zinc-500 font-semibold line-clamp-2">{activeCustomizeItem.description}</p>
