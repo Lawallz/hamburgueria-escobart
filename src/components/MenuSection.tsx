@@ -1,10 +1,9 @@
-import { useState, useMemo, useEffect, FormEvent } from 'react';
+import { useState, useMemo, FormEvent } from 'react';
 import { 
   Search, Star, ChevronLeft, ChevronRight, 
   Plus, X, Info, Check, MessageSquare, Send 
 } from 'lucide-react';
 import { MenuItem, CartItem, Review } from '../types';
-import { api, MenuData } from '../lib/api';
 import { MENU_ITEMS } from '../data/menu';
 
 interface MenuSectionProps {
@@ -12,21 +11,7 @@ interface MenuSectionProps {
 }
 
 export default function MenuSection({ onAddToCart }: MenuSectionProps) {
-  const [menuItems, setMenuItems] = useState<MenuItem[]>(MENU_ITEMS);
-  const [menuError, setMenuError] = useState('');
-  const [loading, setLoading] = useState(true);
-  async function loadMenu() {
-    try { const data = await api<MenuData>('/api/menu'); setMenuItems(data.items); setMenuError(''); }
-    catch { setMenuError('Exibindo o cardápio salvo no site.'); }
-    finally { setLoading(false); }
-  }
-  useEffect(() => {
-    loadMenu();
-    const refresh = () => { if (document.visibilityState === 'visible') loadMenu(); };
-    const timer = window.setInterval(refresh, 30000);
-    window.addEventListener('focus', refresh);
-    return () => { clearInterval(timer); window.removeEventListener('focus', refresh); };
-  }, []);
+  const [menuItems] = useState<MenuItem[]>(MENU_ITEMS);
   // Menu filtering & search states
   const [selectedCategory, setSelectedCategory] = useState<'all' | MenuItem['category']>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -206,8 +191,6 @@ export default function MenuSection({ onAddToCart }: MenuSectionProps) {
     <section id="cardapio" className="py-16 md:py-24 px-4 md:px-8 bg-brand-surface-low border-y-4 border-brand-charcoal">
       <div className="max-w-7xl mx-auto">
         
-        {loading && <p role="status">Carregando cardápio…</p>}
-        {menuError && <p role="alert" className="bg-white p-4 mb-6 border-2 border-red-400">{menuError} <button className="underline font-bold" onClick={loadMenu}>Tentar novamente</button></p>}
         {/* ================= SECTION 1: THE EXCLUSIVE FEATURING CAROUSEL ================= */}
         <div className="mb-20" id="featured-carousel" hidden={!featuredBurgers.length}>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
