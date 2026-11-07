@@ -1,7 +1,7 @@
 :root {
   --color-brand-yellow: #ff7a1a;
   --color-brand-yellow-dark: #a84409;
-  --color-brand-charcoal: #fff1df;
+  --color-brand-charcoal: #211628;
   --color-brand-secondary: #c084fc;
   --color-brand-background: #140d19;
   --color-brand-surface-low: #211628;
@@ -74,8 +74,22 @@ body {
   letter-spacing: .35em;
 }
 
-#hero-title,
-#hero-graphic .text-brand-charcoal {
+#hero-title {
+  color: #fff1df;
+}
+
+.bg-white .text-brand-charcoal:not(button),
+button.bg-white.text-brand-charcoal {
+  color: #fff1df;
+}
+
+#cardapio button.bg-brand-yellow,
+#cardapio button.bg-brand-yellow .text-brand-charcoal {
+  color: #211628;
+}
+
+#sobre .text-brand-charcoal:not(button),
+#contato .text-brand-charcoal:not(button) {
   color: #fff1df;
 }
 
