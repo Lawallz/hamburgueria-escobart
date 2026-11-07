@@ -195,11 +195,11 @@ export default function MenuSection({ onAddToCart }: MenuSectionProps) {
         <div className="mb-20" id="featured-carousel" hidden={!featuredBurgers.length}>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
-              <div className="inline-block bg-brand-charcoal text-white text-[10px] tracking-widest font-space font-extrabold px-3 py-1 uppercase mb-2">
-                Destaques da casa
+              <div className="halloween-section-kicker mb-3">
+                <span aria-hidden="true">✦</span> Destaques da casa <span aria-hidden="true">✦</span>
               </div>
               <h2 className="font-headline text-4xl md:text-5xl uppercase tracking-tight text-brand-charcoal">
-                MAIS PROCURADOS
+                OS MAIS TEMIDOS
               </h2>
             </div>
             
@@ -249,9 +249,13 @@ export default function MenuSection({ onAddToCart }: MenuSectionProps) {
           
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12">
             <div>
-              <h2 className="font-headline text-3xl md:text-4xl uppercase tracking-tight text-brand-charcoal">
-                CARDÁPIO 🎃 HALLOWEEN
-              </h2>
+              <div className="halloween-menu-heading">
+                <span className="halloween-menu-eyebrow">Edição especial • enquanto durar a noite</span>
+                <h2 className="font-headline text-3xl md:text-4xl uppercase tracking-tight text-brand-charcoal">
+                  CARDÁPIO <span>DA NOITE</span>
+                </h2>
+                <p>Escolha sua próxima tentação. A gente cuida do resto.</p>
+              </div>
             </div>
             <div className="relative max-w-md w-full">
               <input type="text" placeholder="Buscar hambúrguer, fritas, bebidas..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full pl-12 pr-4 py-3 neo-brutalist-border bg-white text-brand-charcoal font-sans font-semibold placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-brand-yellow" />

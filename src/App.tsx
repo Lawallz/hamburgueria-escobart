@@ -13,6 +13,7 @@ import FindUsSection from './components/FindUsSection';
 import CartDrawer from './components/CartDrawer';
 import CouponMiniGame from './components/CouponMiniGame';
 import { MenuItem, CartItem } from './types';
+import './halloween.css';
 
 export default function App() {
   const [cart, setCart] = useState<CartItem[]>([]);

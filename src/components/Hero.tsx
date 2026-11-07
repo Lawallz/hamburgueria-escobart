@@ -9,7 +9,7 @@ export default function Hero({ onScrollToMenu, onOpenCart }: HeroProps) {
   return (
     <section 
       id="inicio" 
-      className="relative min-h-[85vh] flex items-center overflow-hidden px-4 md:px-8 py-12 md:py-20 bg-white"
+      className="halloween-hero relative min-h-[85vh] flex items-center overflow-hidden px-4 md:px-8 py-12 md:py-20 bg-white"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
         {/* Left column: Texts & CTA */}
@@ -17,22 +17,22 @@ export default function Hero({ onScrollToMenu, onOpenCart }: HeroProps) {
           {/* Sticker badge */}
           <div className="inline-block bg-brand-yellow px-4 py-2.5 neo-brutalist-border sticker-rotate-ccw mb-2 hover:scale-110 hover:rotate-[-8deg] transition-all duration-300 cursor-pointer">
             <span className="font-space font-extrabold text-xs md:text-sm uppercase tracking-widest text-brand-charcoal">
-              🍔 Ou Plomo ?
+              🎃 EDIÇÃO ASSOMBRADA • 100% ANGUS
             </span>
           </div>
 
           {/* Core brutalist title */}
           <h1 className="font-headline text-5xl md:text-7xl lg:text-[5.5rem] leading-none uppercase text-brand-charcoal tracking-tight" id="hero-title">
-            O SABOR QUE É UM <br />
-            <span className="relative inline-block bg-brand-yellow px-4 py-1 my-1 sticker-rotate-cw hover:rotate-0 transition-transform duration-300">
-              CRIME
+            O SABOR QUE VIRA <br />
+            <span className="halloween-headline-stamp relative inline-block bg-brand-yellow px-4 py-1 my-2 sticker-rotate-cw hover:rotate-0 transition-transform duration-300">
+              LENDA
             </span>{' '}
-            DEIXAR PASSAR
+            DEPOIS DA MEIA-NOITE
           </h1>
 
           {/* Subtitle description */}
           <p className="font-sans text-base md:text-lg max-w-xl text-zinc-600 font-medium leading-relaxed" id="hero-description">
-            Hambúrgueres artesanais de respeito, preparados com blends secretos de 100% Angus, pão brioche tostado na manteiga e ingredientes de qualidade tão exclusiva que parecem ter atravessado a fronteira.
+            Quando a noite cai, a chapa acende. Descubra os artesanais 100% Angus, os clássicos e as porções especiais desta edição de Halloween.
           </p>
 
           {/* Core Interactive Actions */}
@@ -78,7 +78,7 @@ export default function Hero({ onScrollToMenu, onOpenCart }: HeroProps) {
 
             {/* Polaroid caption signature */}
             <div className="mt-4 text-center font-headline text-xl text-brand-charcoal tracking-wide">
-              EL PATRON
+              EL PATRON • O MAIS TEMIDO
             </div>
           </div>
         </div>
